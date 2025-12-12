@@ -22,7 +22,8 @@ app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 
 // ---------- RUTA PARA CREAR TABLAS EN RAILWAY (SETUP) ----------
-app.post('/api/setup-db', async (req, res) => {
+app.get('/api/setup-db', async (req, res) => {
+
   try {
     // USERS
     await pool.query(`CREATE TABLE IF NOT EXISTS users (
